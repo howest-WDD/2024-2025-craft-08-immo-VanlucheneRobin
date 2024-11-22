@@ -1,4 +1,4 @@
-dateModified: 1732202838
+dateModified: 1732262290
 email:
   fromEmail: voornaam.naam@howest.be
   fromName: 'Craft Template'
@@ -34,6 +34,7 @@ plugins:
   mapbox:
     edition: standard
     enabled: true
+    licenseKey: HBYQA9IFOK7V6SHCJSAP6SH5
     schemaVersion: 1.1.0
     settings:
       accessToken: null
