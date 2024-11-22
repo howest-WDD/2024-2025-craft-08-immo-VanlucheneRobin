@@ -1,126 +1,36 @@
-
 {% extends '_shared/_layout.twig' %}
 
 {% block main %}
 
-		<!-- locations -->
-		<div class="container c-section">
-		<!-- todo: Roep All locations op en pas de title en subtitle aan.  -->
-			<h2 class="c-section__title">All Locations</h2>
-			<p class="c-section__subtitle">Where do you want to live?</p>
+	<!-- locations -->
+	<div class="container c-section">
+		{% set allLocations = craft.entries.section('locations').level(1).one() %}
+		<h2 class="c-section__title">{{ allLocations.title }}</h2>
+		<p class="c-section__subtitle">{{ allLocations.subtext }}</p>
 
-			<div class="row justify-content-center c-section__content c-locations text-center">
-				<!-- Roep alle children van All Locations op en loop ze over de lijst. Dit zijn de titels per kolom. Roep dan hiervan ook nog eens de children van op en laat deze de lijst vullen. -->
+		<div class="row justify-content-center c-section__content c-locations text-center">
+			{% set regions = allLocations.children.all() %}
+			{% for region in regions %}
 				<div class="col-12 col-sm-3 col-lg-2">
 					<ul class="c-locations__list">
-						<li class=" c-locations__list-item pb-2">
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-						<li class=" c-locations__list-item pb-2">
-
-							<a class="c-locations__link " href="#">
-								Kortrijk
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-							<a class="c-locations__link " href="#">
-								Brussel
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-
-							<a class="c-locations__link " href="#">
-								Lokeren
-							</a>
-						</li>
+						<h3>{{ region.title }}</h3>
+						{% set cities = region.children.all() %}
+						{% for city in cities %}
+							<li class=" c-locations__list-item pb-2">
+								<a class="c-locations__link " href="{{url(city.uri)}}">
+									{{ city.title }}
+								</a>
+							</li>
+						{% endfor %}
 					</ul>
 				</div>
-				<div class="col-12 col-sm-3 col-lg-2">
-					<ul class="c-locations__list">
-						<li class="c-locations__list-item pb-2">
-							<a class="c-locations__link " href="#">
-								Antwerpen
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="u-hidden col-sm-3 col-lg-2">
-					<ul class="c-locations__list">
-						<li class="c-locations__list-item pb-2">
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="u-hidden col-sm-3 col-lg-2">
-					<ul class="c-locations__list">
-						<li class="c-locations__list-item pb-2">
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-						<li class="c-locations__list-item pb-2">
-
-							<a class="c-locations__link " href="#">
-								Gent
-							</a>
-						</li>
-					</ul>
-				</div>
-
-			</div>
-			<img class="col-12 mb-5" src="{{url('img/map.png')}}" alt="">
-
+			{% endfor %}
 
 		</div>
+		<img class="col-12 mb-5" src="{{url('img/map.png')}}" alt="">
+
+
+	</div>
 
 
 {% endblock %}

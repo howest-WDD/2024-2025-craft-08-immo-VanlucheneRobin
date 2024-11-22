@@ -8,7 +8,7 @@
 			{% set allCategories = craft.entries.section('categories').level(1).one() %}
 			<h2 class="c-section__title">{{allCategories.title}}</h2>
 			<p class="c-section__subtitle">{{allCategories.subtext}}</p>
-			<!-- todo: Roep alle children van All  Categories op en loop ze over de cards. Vul de link, title en image dynamisch toe -->
+			
 			{% set categories = allCategories.children.all() %}
 			<!-- categories -->
 			<div class="row g-3 justify-content-center c-section__content">
