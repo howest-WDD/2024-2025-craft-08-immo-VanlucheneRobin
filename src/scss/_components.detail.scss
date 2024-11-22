@@ -1,86 +1,88 @@
 .c-detail {
-    &__carousel {
-        position: relative;
+  &__carousel {
+    position: relative;
+  }
+
+  &__price {
+    color: $color-detail;
+    font-size: 2.5rem;
+    &--small {
+      font-size: 1.8rem;
     }
+  }
 
-    &__price {
-        color: $color-detail;
-        font-size: 2.5rem;
-        &--small {
-            font-size: 1.8rem;
-        }
+  &__location {
+    display: flex;
+    gap: 0.5rem;
+    & p {
+      margin-bottom: 0;
+      font-weight: 200;
     }
+  }
+  &__rooms {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+  }
 
-    &__location {
-        display: flex;
-        gap: .5rem;
-        & p {
-            margin-bottom: 0;
-            font-weight: 200;
-        }
+  &__icons {
+    display: flex;
+    gap: 0.8rem;
+
+    & p {
+      font-weight: 200;
+      margin-bottom: 0;
     }
-    &__rooms{
-        display: flex;
-        gap: 2rem;
-        margin: 1rem 0;
+  }
+
+  &__realtor {
+    margin-top: 3.6rem;
+  }
+
+  &__realtor-info {
+    font-weight: 200;
+
+    & p {
+      margin-bottom: 0;
     }
+  }
 
-    &__icons {
-        display: flex;
-        gap:.8rem;
+  &__realtor-img {
+    padding: 0;
+    height: 100%;
+  }
 
-        & p {
-            font-weight: 200;
-            margin-bottom: 0;
-        }
+  &__tags {
+    display: flex;
+  }
 
+  &__tag {
+    background-color: $color-accent2;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    &--sale {
+      background-color: $color-sale;
+      color: $color-rent;
     }
-
-    &__realtor {
-        margin-top: 3.6rem;
+    &--rent {
+      background-color: $color-rent;
+      color: $color-sale;
     }
+  }
 
-    &__realtor-info {
-        font-weight: 200;
+  &__list {
+    border-radius: 1rem;
+  }
+  &__list-item {
+    list-style: none;
+    font-weight: 600;
+    padding: 1rem 0;
+    border-bottom: $color-accent2 1px solid;
+  }
 
-        & p {
-            margin-bottom: 0;
-        }
-    }
-
-    &__realtor-img{
-        padding:0;
-        height: 100%;
-    }
-
-    &__tags {
-        display: flex;
-    }
-
-    &__tag {
-        background-color: $color-accent2;
-        padding: 0.5rem 1rem;
-        border-radius: 1rem;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        &--sale {
-            background-color: $color-sale;
-            color: $color-rent
-        }
-    }
-
-    &__list {
-        border-radius: 1rem;
-    }
-    &__list-item {
-        list-style: none;
-        font-weight: 600;
-        padding: 1rem 0 ;
-        border-bottom: $color-accent2 1px solid;
-    }
-
-    &__about {
-        font-size: 1.2rem;
-    }
-
+  &__about {
+    font-size: 1.2rem;
+  }
 }

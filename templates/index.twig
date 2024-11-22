@@ -91,11 +91,7 @@
 					<a href="{{ url(house.uri) }}" class="c-immo-card">
 						<div class="c-immo-card__imgcontainer">
 							<img src={{house.cover.one().url()}} alt="" class="c-immo-card__img">
-							<div class="c-immo-card__tag
-																																											{% switch house.state %}
-																																											{% case 'sale' %}c-immo-card__tag--sale
-																																											{% case 'rent' %}c-immo-card__tag--rent
-																																											{% default %}{% endswitch %}">
+							<div class="c-immo-card__tag {% switch house.state %}{% case 'sale' %}c-immo-card__tag--sale{% case 'rent' %}c-immo-card__tag--rent{% default %}{% endswitch %}">
 								<p>For
 									{{house.state}}</p>
 							</div>
@@ -281,10 +277,10 @@
 					</div>
 					<p>
 						Searches for multiplexes, property comparisons,
-																																																																						and the loan estimator. Works great. Lorem
-																																																																						ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																						sed do eiusmod tempor incididunt ut labore et
-																																																																						dores.
+																																																																																		and the loan estimator. Works great. Lorem
+																																																																																		ipsum dolor sit amet, consectetur adipiscing elit,
+																																																																																		sed do eiusmod tempor incididunt ut labore et
+																																																																																		dores.
 					</p>
 
 				</div>
@@ -300,10 +296,10 @@
 					</div>
 					<p>
 						Searches for multiplexes, property comparisons,
-																																																																						and the loan estimator. Works great. Lorem
-																																																																						ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																						sed do eiusmod tempor incididunt ut labore et
-																																																																						dores.
+																																																																																		and the loan estimator. Works great. Lorem
+																																																																																		ipsum dolor sit amet, consectetur adipiscing elit,
+																																																																																		sed do eiusmod tempor incididunt ut labore et
+																																																																																		dores.
 					</p>
 
 				</div>
@@ -319,10 +315,10 @@
 					</div>
 					<p>
 						Searches for multiplexes, property comparisons,
-																																																																						and the loan estimator. Works great. Lorem
-																																																																						ipsum dolor sit amet, consectetur adipiscing elit,
-																																																																						sed do eiusmod tempor incididunt ut labore et
-																																																																						dores.
+																																																																																		and the loan estimator. Works great. Lorem
+																																																																																		ipsum dolor sit amet, consectetur adipiscing elit,
+																																																																																		sed do eiusmod tempor incididunt ut labore et
+																																																																																		dores.
 					</p>
 
 				</div>
