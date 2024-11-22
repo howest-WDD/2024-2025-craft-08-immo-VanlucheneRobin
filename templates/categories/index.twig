@@ -1,63 +1,33 @@
-
 {% extends '_shared/_layout.twig' %}
 
 {% block main %}
 
-		<!-- Categories section -->
-		<div class="container-fluid c-section ">
-			<div
-				class="c-categories">
-				<!-- todo: Roep All Categories op en pas de title en subtitle aan.  -->
-				<h2 class="c-section__title">All Categories</h2>
-				<p class="c-section__subtitle">Give me subtext!</p>
-				<!-- todo: Roep alle children van All  Categories op en loop ze over de cards. Vul de link, title en image dynamisch toe -->
-				<!-- categories -->
-				<div
-					class="row g-3 justify-content-center c-section__content">
+	<!-- Categories section -->
+	<div class="container-fluid c-section ">
+		<div class="c-categories">
+			{% set allCategories = craft.entries.section('categories').level(1).one() %}
+			<h2 class="c-section__title">{{allCategories.title}}</h2>
+			<p class="c-section__subtitle">{{allCategories.subtext}}</p>
+			<!-- todo: Roep alle children van All  Categories op en loop ze over de cards. Vul de link, title en image dynamisch toe -->
+			{% set categories = allCategories.children.all() %}
+			<!-- categories -->
+			<div class="row g-3 justify-content-center c-section__content">
+				{% for category in categories %}
 					<!-- category card  -->
-					<a href="#" class="c-categories__card col-12 col-sm-3 col-lg-2">
+					<a href="{{url(category.uri)}}" class="c-categories__card col-12 col-sm-3 col-lg-2">
 						<div class="c-categories__info">
-							<h3 class="c-categories__title">Town House</h3>
+							<h3 class="c-categories__title">{{category.title}}</h3>
 							<p class="">2 properties</p>
 						</div>
 						<div class="c-categories__imgcontainer">
-							<img src="img/town-houses.jpeg" alt="" class="c-categories__img">
+							<img src="{{ category.cover.one().url() }}" alt="{{ category.title }}" class="c-categories__img">
 						</div>
 					</a>
-					<!-- category card  -->
-					<a href="#" class="col-12 col-sm-3 col-lg-2 c-categories__card">
-						<div class="c-categories__info">
-							<h3 class="c-categories__title">Villa</h3>
-							<p class="">10 properties</p>
-						</div>
-						<div class="c-categories__imgcontainer">
-							<img src="img/modern-villa.jpeg" alt="" class="c-categories__img">
-						</div>
-					</a>
-					<!-- category card  -->
-					<a href="#" class="col-12 col-sm-3 col-lg-2 c-categories__card">
-						<div class="c-categories__info">
-							<h3 class="c-categories__title">Apartment</h3>
-							<p class="">3 properties</p>
-						</div>
-						<div class="c-categories__imgcontainer">
-							<img src="img/apartment.jpeg" alt="" class="c-categories__img">
-						</div>
-					</a>
-					<!-- category card  -->
-					<a href="#" class="col-12 col-sm-3 col-lg-2 c-categories__card">
-						<div class="c-categories__info">
-							<h3 class="c-categories__title">Office</h3>
-							<p class="">3 properties</p>
-						</div>
-						<div class="c-categories__imgcontainer">
-							<img src="img/office.jpeg" alt="" class="c-categories__img">
-						</div>
-					</a>
-				</div>
+				{% endfor %}
 			</div>
-
 		</div>
+
+	</div>
 
 
 {% endblock %}
