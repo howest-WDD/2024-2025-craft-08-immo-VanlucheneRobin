@@ -40,8 +40,10 @@
 							</div>
 							<div class="c-immo-card__location">
 								<img src="{{url('img/icons/location.svg')}}" alt="">
+								{% set city = craft.entries.section('locations').relatedTo(house).one() %}
 								<p>
-									{{house.location}}
+									{{house.location}},
+									{{city.title}}
 								</p>
 
 							</div>
