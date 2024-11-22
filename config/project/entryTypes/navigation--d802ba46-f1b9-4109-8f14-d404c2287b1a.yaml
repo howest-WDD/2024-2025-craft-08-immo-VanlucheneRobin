@@ -1,0 +1,67 @@
+color: lime
+fieldLayouts:
+  42fc959c-4faa-4e28-b213-8d97c5794f1b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-11-22T11:19:02+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: db21c3ea-34d7-4f3e-b7f9-fcf9ecc976b1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-11-22T11:22:09+00:00'
+            elementCondition: null
+            fieldUid: 08a2a117-8533-44c2-aa52-08fc275e8046 # Nav Url
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d078c7c2-9d98-4518-81bd-65c771125cc8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f812d057-1fab-4df6-bc22-2042f9d2de98
+        userCondition: null
+handle: navigation
+hasTitleField: true
+icon: bars
+name: Navigation
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
